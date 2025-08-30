@@ -1,14 +1,10 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import Nav from './components/Nav'
-import Hero from './components/Hero'
-import Box from './components/Box'
+import App from './App'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Nav/>
-    <Hero/>
-    <Box/>
+    <App/>
   </StrictMode>,
 )

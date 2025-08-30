@@ -4,7 +4,7 @@ import { FiAlignJustify } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
 import { useState } from "react";
 
-const Nav = () => {
+const Nav = ({count,copy}) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const toggleMobileMenu = () => {
@@ -22,14 +22,14 @@ const Nav = () => {
                     {/* Desktop menu */}
                     <div className="hidden md:flex items-center gap-6">
                         <button className="flex gap-2 items-center bg-[#ECFFF0] px-8 py-2 rounded-2xl">
-                            <span className="text-black">0</span>
+                            <span className="text-black font-bold">{count}</span>
                             <img className="w-4 md-w-6" src={heart} alt="heart" />
                         </button>
-                        <button className="flex gap-2 items-center bg-[#ECFFF0] px-8 py-2 rounded-2xl">
+                        <button className="flex gap-2 items-center bg-[#ECFFF0] px-8 py-2 rounded-2xl font-bold">
                             <span className="text-black">0</span>
                             <img className="w-4 md-w-6" src={coin} alt="coin" />
                         </button>
-                        <button className="bg-[#00A63E] px-8 py-2 text-white  rounded-full flex items-center"><p>copy</p></button>
+                        <button className="bg-[#00A63E] px-8 py-2 text-white font-bold rounded-full flex items-center gap-2"><p>{copy} <span>copy</span> </p></button>
                     </div>
                     {/* mobile menu button  */}
                     <div className="block md:hidden">
@@ -43,14 +43,14 @@ const Nav = () => {
                 <section className={`${isMobileMenuOpen ? 'block' : 'hidden'} lg:hidden `} >
                     <div className="px-4 py-4 space-y-4 md:hidden ">
                         <button className="flex gap-2 items-center justify-center bg-[#ECFFF0] px-8 py-2 rounded-2xl w-full">
-                            <span className="text-black">0</span>
+                            <span className="text-black font-bold">{count}</span>
                             <img className="w-4 md-w-6" src={heart} alt="heart" />
                         </button>
-                        <button className="flex gap-2 items-center justify-center bg-[#ECFFF0] px-8 py-2 rounded-2xl w-full">
+                        <button className="flex gap-2 items-center justify-center bg-[#ECFFF0] px-8 py-2 rounded-2xl w-full font-bold">
                             <span className="text-black">0</span>
                             <img className="w-4 md-w-6" src={coin} alt="coin" />
                         </button>
-                        <button className="bg-[#00A63E]  pb-2.5 pt-1.5 text-white  rounded-full flex items-center w-full justify-center">copy</button>
+                        <button className="bg-[#00A63E]  pb-2.5 pt-1.5 text-white font-bold rounded-full flex items-center w-full justify-center gap-2">{copy} <span>copy</span> </button>
                     </div>
                 </section>
             </nav>
