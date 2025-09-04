@@ -1,10 +1,11 @@
+import logo from "../assets/logo.png";
 import heart from "../assets/heart.png";
 import coin from "../assets/coin.png";
 import { FiAlignJustify } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
 import { useState } from "react";
 
-const Nav = ({count,copy}) => {
+const Nav = ({copy}) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const toggleMobileMenu = () => {
@@ -16,13 +17,13 @@ const Nav = ({count,copy}) => {
             <nav className="bg-white">
                 <section className="max-w-screen-2xl mx-auto flex items-center justify-between px-4 md-px-5 py-6">
                     <div className="flex items-center gap-2">
-                        <img className="w-16" src="./public/logo.png" alt="logo" />
+                        <img className="w-16" src={logo} alt="logo" />
                         <h1 className="text-[#006747] font-bold text-2xl">Emergency <br /> Service</h1>
                     </div>
                     {/* Desktop menu */}
                     <div className="hidden md:flex items-center gap-6">
                         <button className="flex gap-2 items-center bg-[#ECFFF0] px-8 py-2 rounded-2xl">
-                            <span className="text-black font-bold">{count}</span>
+                            <span className="text-black font-bold">0</span>
                             <img className="w-4 md-w-6" src={heart} alt="heart" />
                         </button>
                         <button className="flex gap-2 items-center bg-[#ECFFF0] px-8 py-2 rounded-2xl font-bold">
@@ -43,7 +44,7 @@ const Nav = ({count,copy}) => {
                 <section className={`${isMobileMenuOpen ? 'block' : 'hidden'} lg:hidden `} >
                     <div className="px-4 py-4 space-y-4 md:hidden ">
                         <button className="flex gap-2 items-center justify-center bg-[#ECFFF0] px-8 py-2 rounded-2xl w-full">
-                            <span className="text-black font-bold">{count}</span>
+                            <span className="text-black font-bold"></span>
                             <img className="w-4 md-w-6" src={heart} alt="heart" />
                         </button>
                         <button className="flex gap-2 items-center justify-center bg-[#ECFFF0] px-8 py-2 rounded-2xl w-full font-bold">

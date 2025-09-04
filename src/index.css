@@ -1,8 +1,14 @@
 @import "tailwindcss";
-@plugin "daisyui";
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
 body{
-    font-family: "Roboto", sans-serif;
-    background-color: #F5FFF6;
+  background-color: #F5FFF6;
+  font-family: "Open Sans", sans-serif;
+}
+.btn{
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  width: 100%;
+  cursor: pointer;
 }

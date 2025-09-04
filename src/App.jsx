@@ -1,26 +1,22 @@
-import Nav from './components/Nav'
-import Hero from './components/Hero'
-import Box from './components/Box'
-import { useState } from 'react'
+import Nav from "./components/Nav";
+import Hero from "./components/Hero";
+import Card from "./components/Card";
+import { useState } from "react";
 
 const App = () => {
-    const [count,setCount]=useState(0);
-    const [copy,setCopy]=useState(0);
+  const [copy, setCopy] = useState(0);
 
-    const heartCount=()=>{
-        setCount(count+1);
-    }
-    const copyCount=()=>{
-        setCopy(copy+1);
-    }
-    
-    return (
-        <>
-            <Nav count={count} copy={copy} />
-            <Hero />
-            <Box heartCount={heartCount} copyCount={copyCount} />
-        </>
-    )
+  // copy count function 
+  const copyCount = () => {
+    setCopy(copy + 1)
+  }
+  return (
+    <>
+      <Nav copy={copy} />
+      <Hero />
+      <Card copyClick={copyCount} />
+    </>
+  )
 }
 
 export default App;
