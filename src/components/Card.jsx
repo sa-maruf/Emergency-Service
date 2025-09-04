@@ -19,8 +19,6 @@ const serviecs = [
 
 const Card = ({ copyClick }) => {
     const [history, setHistory] = useState([]);
-    const [number] = useState("");
-    const numberRef = useRef(null);
 
     // call function 
     const callClick = (data) => {
@@ -32,9 +30,8 @@ const Card = ({ copyClick }) => {
     }
 
     // copy function 
-    const copyNumber = () => {
+    const copyNumber = (textCopy) => {
         alert("The number has been copied.");
-        const textCopy = numberRef.current.innerText;
         navigator.clipboard.writeText(textCopy);
     }
     return (
@@ -52,9 +49,9 @@ const Card = ({ copyClick }) => {
                                     </div>
                                     <h1 className="text-xl text-green-600 font-bold">{service.name}</h1>
                                     <p className="text-sm font-bold text-gray-500">{service.time}</p>
-                                    <p ref={numberRef} className="text-md font-bold text-gray-500">{number} {service.number}</p>
+                                    <p className="text-md font-bold text-gray-500">{service.number}</p>
                                     <div className="flex gap-4">
-                                        <button onClick={()=>{copyClick();copyNumber();}} className="btn border-2 border-gray-300 text-gray-500">Copy</button>
+                                        <button onClick={()=>{copyClick();copyNumber(service.number);}} className="btn border-2 border-gray-300 text-gray-500">Copy</button>
                                         <button onClick={() => (callClick(service))} className="btn bg-green-600 text-white">Call Now</button>
                                     </div>
                                 </div>
