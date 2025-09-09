@@ -65,10 +65,10 @@ const Card = ({ copyClick ,handleHeartClick, favoriteIds }) => {
                 <div className=" lg:col-span-1 bg-[#FFFFFF] border-1 border-gray-300 rounded-md p-4 h-[400px] lg:h-[860px] overflow-auto">
                     <div className="flex justify-between items-center text-green-600 font-bold">
                         <p className="flex items-center gap-1 text-lg"><MdOutlineWatchLater /> Call History</p>
-                        <button onClick={clearClick} className="bg-green-600 py-1 px-4 rounded-md text-white cursor-pointer">Clear</button>
+                        <button onClick={clearClick} className="text-orange-600 cursor-pointer font-bold text-xl">Clear</button>
                     </div>
                     <div className="mt-2">
-                        {history.length === 0 ? (<p className="text-lg font-bold text-orange-600 text-center">No history found</p>
+                        {history.length === 0 ? (<p className="text-lg font-bold text-orange-600 px-2">No history found</p>
                         ) : (
                             history.map((callHistory, index) => (
                                 <li key={index} className="list-none bg-gray-100 py-2 px-4 mt-4 rounded-md text-green-500">
