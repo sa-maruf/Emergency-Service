@@ -5,7 +5,7 @@ import { FiAlignJustify } from "react-icons/fi";
 import { FiX } from "react-icons/fi";
 import { useState } from "react";
 
-const Nav = ({copy}) => {
+const Nav = ({copy,heartCount}) => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const toggleMobileMenu = () => {
@@ -23,7 +23,7 @@ const Nav = ({copy}) => {
                     {/* Desktop menu */}
                     <div className="hidden md:flex items-center gap-6">
                         <button className="flex gap-2 items-center bg-[#ECFFF0] px-8 py-2 rounded-2xl">
-                            <span className="text-black font-bold">0</span>
+                            <span className="text-black font-bold">{heartCount}</span>
                             <img className="w-4 md-w-6" src={heart} alt="heart" />
                         </button>
                         <button className="flex gap-2 items-center bg-[#ECFFF0] px-8 py-2 rounded-2xl font-bold">
@@ -44,7 +44,7 @@ const Nav = ({copy}) => {
                 <section className={`${isMobileMenuOpen ? 'block' : 'hidden'} lg:hidden `} >
                     <div className="px-4 py-4 space-y-4 md:hidden ">
                         <button className="flex gap-2 items-center justify-center bg-[#ECFFF0] px-8 py-2 rounded-2xl w-full">
-                            <span className="text-black font-bold"></span>
+                            <span className="text-black font-bold">{heartCount}</span>
                             <img className="w-4 md-w-6" src={heart} alt="heart" />
                         </button>
                         <button className="flex gap-2 items-center justify-center bg-[#ECFFF0] px-8 py-2 rounded-2xl w-full font-bold">
