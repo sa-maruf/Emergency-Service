@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { MdOutlineWatchLater } from "react-icons/md";
+import { GrClearOption } from "react-icons/gr";
 
 const serviecs = [
     { id: 11, name: "Ambulance Service", time: "24 hours service", number: 101090, image: "https://i.ibb.co.com/BKvYHkxM/ambulance.png" },
@@ -15,14 +16,24 @@ const serviecs = [
     { id: 77, name: "Brac Service", time: "24 hours service", number: 888, image: "https://i.ibb.co.com/0dMkG0Q/brac.png" },
     { id: 88, name: "Fire Service", time: "24 hours service", number: 12345, image: "https://i.ibb.co.com/qLgGkR0L/fire-service.png" },
     { id: 99, name: "Emergency Number", time: "24 hours service", number: 999, image: "https://i.ibb.co.com/MDt12hZ0/emergency.png" },
+    {
+        id: 101, name: "Bangladesh Railway Helpline", time: "24 hours service", number: 7777,
+        image: "https://i.ibb.co.com/XZ9hPXCj/Bangladesh-Railway.png"
+    },
+    { id: 102, name: "Brac Service", time: "24 hours service", number: 888, image: "https://i.ibb.co.com/0dMkG0Q/brac.png" },
+    { id: 103, name: "Brac Service", time: "24 hours service", number: 888, image: "https://i.ibb.co.com/0dMkG0Q/brac.png" },
+    { id: 104, name: "Emergency Number", time: "24 hours service", number: 999, image: "https://i.ibb.co.com/MDt12hZ0/emergency.png" },
+    { id: 105, name: "Fire Service", time: "24 hours service", number: 12345, image: "https://i.ibb.co.com/qLgGkR0L/fire-service.png" },
+    { id: 106, name: "Police Helpline", time: "24 hours service", number: 333, image: "https://i.ibb.co.com/d0jCTDkL/police.png" },
+    { id: 107, name: "Brac Service", time: "24 hours service", number: 888, image: "https://i.ibb.co.com/0dMkG0Q/brac.png" },
 ]
 
-const Card = ({ copyClick ,handleHeartClick, favoriteIds }) => {
+const Card = ({ copyClick, handleHeartClick, favoriteIds }) => {
     const [history, setHistory] = useState([]);
 
     // call function 
     const callClick = (data) => {
-        alert("Call Now")
+        // alert("Call Now")
         setHistory((items) => ([...items, data]))
     }
     const clearClick = () => {
@@ -36,9 +47,9 @@ const Card = ({ copyClick ,handleHeartClick, favoriteIds }) => {
     }
     return (
         <>
-            <section className="max-w-screen-2xl mx-auto px-5 grid lg:grid-cols-4 mt-14 mb-20 gap-4">
+            <section className="max-w-screen-2xl mx-auto px-5 grid lg:grid-cols-4 mt-14 mb-20 gap-4 lg:h-[600px]">
                 {/* Card part */}
-                <div className=" lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div className=" lg:col-span-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:h-[600px] overflow-auto">
                     {serviecs.map((service) => {
                         return (
                             <div key={service.id}>
@@ -62,13 +73,13 @@ const Card = ({ copyClick ,handleHeartClick, favoriteIds }) => {
                     })}
                 </div>
                 {/* Clear History  */}
-                <div className=" lg:col-span-1 bg-[#FFFFFF] border-1 border-gray-300 rounded-md p-4 h-[400px] lg:h-[860px] overflow-auto">
+                <div className=" lg:col-span-1 bg-[#FFFFFF] border-1 border-gray-300 rounded-md p-4 ">
                     <div className="flex justify-between items-center text-green-600 font-bold">
                         <p className="flex items-center gap-1 text-lg"><MdOutlineWatchLater /> Call History</p>
-                        <button onClick={clearClick} className="text-orange-600 cursor-pointer font-bold text-xl">Clear</button>
+                        <button onClick={clearClick} className="text-orange-600 cursor-pointer font-bold text-xl"><GrClearOption/></button>
                     </div>
-                    <div className="mt-2">
-                        {history.length === 0 ? (<p className="text-lg font-bold text-orange-600 px-2">No history found</p>
+                    <div className="mt-2 h-[400px] lg:h-[520px] overflow-auto">
+                        {history.length === 0 ? (<p className="text-orange-600 px-2">No history found</p>
                         ) : (
                             history.map((callHistory, index) => (
                                 <li key={index} className="list-none bg-gray-100 py-2 px-4 mt-4 rounded-md text-green-500">

@@ -17,8 +17,8 @@ const Nav = ({copy,heartCount}) => {
             <nav className="bg-white">
                 <section className="max-w-screen-2xl mx-auto flex items-center justify-between px-4 md-px-5 py-6">
                     <div className="flex items-center gap-2">
-                        <img className="w-16" src={logo} alt="logo" />
-                        <h1 className="text-[#006747] font-bold text-2xl">Emergency <br /> Service</h1>
+                        <img className="w-12 md:w-16" src={logo} alt="logo" />
+                        <h1 className="text-[#006747] font-bold text-xl md:text-2xl">Emergency <br /> Service</h1>
                     </div>
                     {/* Desktop menu */}
                     <div className="hidden md:flex items-center gap-6">
