@@ -33,7 +33,7 @@ const Card = ({ copyClick, handleHeartClick, favoriteIds }) => {
 
     // call function 
     const callClick = (data) => {
-        // alert("Call Now")
+        alert("Call Now")
         setHistory((items) => ([...items, data]))
     }
     const clearClick = () => {
